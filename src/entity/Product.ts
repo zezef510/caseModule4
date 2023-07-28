@@ -1,5 +1,5 @@
 import {Column, Entity, ManyToOne, PrimaryGeneratedColumn} from "typeorm";
-import {Category} from "./Category";
+import {User} from "./User";
 
 @Entity()
 export class Product {
@@ -7,14 +7,21 @@ export class Product {
     id: number;
 
     @Column({type: "varchar", length: 255})
-    name: string;
+    nameProduct: string;
 
     @Column({type: "varchar", length: 255})
-    des: string;
+    detail: string;
+
+    @Column({type: "varchar", length: 255})
+    image: string;
 
     @Column({type: "int"})
     price: number;
 
-    @ManyToOne(() => Category, (category) => category.id)
-    category: Category
+    @Column({type: "int"})
+    quantity: number;
+
+
+    @ManyToOne(() => User, (User) => User.id)
+    User
 }
