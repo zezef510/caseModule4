@@ -8,7 +8,6 @@ class ProductService implements Service<Product> {
     findAll = async () => {
         return await this.repository.find({
             relations: {
-                category: true
             }
         });
     }
