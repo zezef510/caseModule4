@@ -3,6 +3,11 @@ import userService from "../service/UserService";
 const session = require('express-session');
 
 class UserController {
+    private userService;
+
+    constructor() {
+        this.userService = userService;
+    }
 
 
     register = async (req: Request, res: Response) => {
