@@ -6,9 +6,11 @@ import {SECRET} from "../middleware/jwt";
 
 class UserService {
     private userRepository;
-
     constructor() {
         this.userRepository = AppDataSource.getRepository(User);
+    }
+    findAll = async () =>{
+        return await this.userRepository.find()
     }
 
 

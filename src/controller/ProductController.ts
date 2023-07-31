@@ -12,7 +12,11 @@ class ProductController {
         let list;
         if (req.query.name) {
             list = await this.productService.findByName(req.query.name)
-        } else {
+        }
+        else if(req.query.price){
+            list = await this.productService.sortPrice(req.query.price)
+        }
+        else {
             list = await this.productService.findAll()
         }
         res.json(list)
@@ -38,14 +42,8 @@ class ProductController {
         let data = await this.productService.findByName(req.query.name);
         res.json(data)
     }
-    priceASC = async (req, res) => {
-        let data = await this.productService.priceASC()
-        res.json(data)
-    }
-    priceDESC = async (req, res) => {
-        let data = await this.productService.priceDESC()
-        res.json(data)
-    }
+
+
 }
 
 export default new ProductController();
