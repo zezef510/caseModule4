@@ -10,7 +10,6 @@ productRouter.get('/:id', productController.findById);
 productRouter.post('', productController.add);
 productRouter.put('/:id', productController.update);
 productRouter.delete('/:id', productController.delete);
-productRouter.get('/priceASC', productController.priceASC);
-productRouter.get('/priceDESC', productController.priceDESC);
+
 
 export default productRouter;

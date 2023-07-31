@@ -43,6 +43,12 @@ class ProductService implements Service<Product> {
             }
         })
     }
+    sortPrice = async (price)=>{
+        let list = await this.repository.find({
+            order:{price: price}
+        })
+        return list
+    }
     priceASC = async ()=>{
         let list = await this.repository.find({
             order:{price:"ASC"}
