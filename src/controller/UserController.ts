@@ -19,6 +19,10 @@ class UserController {
         let resultCheck = await userService.checkUser(req.body);
         res.status(200).json(resultCheck);
     }
+    findAll = async (req,res)=>{
+        let list = await this.userService.findAll()
+        res.json(list)
+    }
 
 }
 

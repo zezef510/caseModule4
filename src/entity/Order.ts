@@ -12,6 +12,8 @@ export class Order {
 
     @Column({type:"varchar"})
     status : string
+    @Column({type:"int"})
+    quantity : number
 
 
     @ManyToOne(() => User, (User) => User.id)
