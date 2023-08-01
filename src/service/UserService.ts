@@ -38,6 +38,9 @@ class UserService {
             }
         }
     }
+    findAll = async () => {
+        return await this.userRepository.find();
+    }
 
 }
 

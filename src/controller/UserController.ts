@@ -3,6 +3,11 @@ import userService from "../service/UserService";
 const session = require('express-session');
 
 class UserController {
+    private userService;
+
+    constructor() {
+        this.userService = userService;
+    }
 
 
     register = async (req: Request, res: Response) => {
@@ -13,6 +18,10 @@ class UserController {
     login = async (req: Request, res: Response) => {
         let resultCheck = await userService.checkUser(req.body);
         res.status(200).json(resultCheck);
+    }
+    findAll = async (req,res)=>{
+        let list = await this.userService.findAll()
+        res.json(list)
     }
 
 }

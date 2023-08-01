@@ -23,5 +23,5 @@ export class Product {
 
 
     @ManyToOne(() => User, (User) => User.id)
-    User
+    User : User[]
 }
